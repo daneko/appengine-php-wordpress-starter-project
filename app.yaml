@@ -1,6 +1,5 @@
-application: your-project-id
-version: wpfromstarterproject
 runtime: php55
+service: service_name if you need.
 api_version: 1
 
 handlers:
@@ -54,3 +53,4 @@ skip_files:
 - ^(.*/)?\.bat$
 - ^(.*/)?\.sh$
 - ^(.*/)?\.md$
+- .git/

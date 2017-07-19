@@ -22,10 +22,12 @@
     if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
         /** The name of the Cloud SQL database for WordPress */
         define('DB_NAME', 'wordpress_db');
-        /** Live environment Cloud SQL login and SITE_URL info */
-        /** Note that from App Engine, the password is not required, so leave it blank here */
-        define('DB_HOST', ':/cloudsql/your-project-id:wordpress');
+        /** Live environment Cloud SQL second generation login and SITE_URL info */
+        /** Note do command as gcloud sql instances descibe instance-name, and check connectionName */
+        define('DB_HOST', ':/cloudsql/your-project-id:region;instance-name');
+        /** change username */
         define('DB_USER', 'root');
+        /** change password */
         define('DB_PASSWORD', '');
     } else {
         /** The name of the local database for WordPress */
@@ -98,12 +100,12 @@
      * in their development environments.
      */
     define('WP_DEBUG', false);
-    
+
     /**
      * Disable default wp-cron in favor of a real cron job
      */
     define('DISABLE_WP_CRON', true);
-    
+
     // configures batcache
     $batcache = [
       'seconds'=>0,
