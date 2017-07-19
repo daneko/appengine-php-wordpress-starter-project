@@ -1,6 +1,6 @@
 [submodule "appengine-wordpress-plugin"]
 	path = appengine-wordpress-plugin
-	url = https://github.com/GoogleCloudPlatform/appengine-wordpress-plugin.git
+	url = https://github.com/GoogleCloudPlatform/wordpress-plugins.git
 [submodule "batcache"]
 	path = batcache
 	url = https://github.com/Automattic/batcache.git
