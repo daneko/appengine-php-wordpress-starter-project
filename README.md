@@ -9,7 +9,7 @@
 3. [Sign up](http://cloud.google.com/console) for a Google Cloud Platform project, and
 set up a Cloud SQL instance, as described [here](https://cloud.google.com/sql/docs/getting-started#create), and a
 Cloud Storage bucket, as described [here](https://developers.google.com/storage/docs/signup). You'll want to name
-your Cloud SQL instance "wordpress" to match the config files provided here. To keep costs down, we suggest signing up for a D0 instance with package billing. 
+your Cloud SQL instance "wordpress" to match the config files provided here. To keep costs down, we suggest signing up for a D0 instance with package billing.
 4. Visit your project in the
 [Google Cloud Console](http://cloud.google.com/console), going to the App Engine section's **Application Settings**
 area, and make a note of the **Service Account Name** for your application, which has an e-mail address
@@ -93,12 +93,12 @@ You should be able to log in, and confirm that your app is ready to deploy.
 
 If all looks good, you can upload your application using the Launcher or by using this command:
 
-    $ APP_ENGINE_SDK_PATH/appcfg.py update APPLICATION_DIRECTORY
+    $ gcloud app deploy
 
 Just like you had to do with the local database, you'll need to set up the Cloud SQL instance. The SDK includes
 a tool for doing just that:
 
-    google_sql.py <PROJECT_ID>:wordpress
+    gcloud sql connect cloud_sql_instance_name --user=db_user
 
 This launches a browser window that authorizes the `google_sql.py` tool to connect to your Cloud SQL instance.
 After clicking **Accept**, you can return to the command prompt, which has entered into the SQL command tool
